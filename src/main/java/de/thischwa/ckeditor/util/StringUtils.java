@@ -1,5 +1,6 @@
 /*
- * ckeditor.java - A Java backend for the CKEditor (http://ckeditor.com).
+ * ckeditor.java - Java backend of CKEditor (http://ckeditor.com). 
+ * It provides a simple object for creating an editor instance.
  * Copyright (C) Thilo Schwarz
  * 
  * == BEGIN LICENSE ==
