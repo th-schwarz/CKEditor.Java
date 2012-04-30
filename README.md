@@ -3,8 +3,8 @@ ckeditor.java
 
 Java backend of CKEditor. It provides a simple object for creating an editor instance.
 
-Licensed under the terms of any of the following licenses at your choice:
- 
-* GNU General Public License Version 2 or later (the "[GPL](http://www.gnu.org/licenses/gpl.html)")
-* GNU Lesser General Public License Version 2.1 or later (the "[LGPL](http://www.gnu.org/licenses/lgpl.html)")
-* Mozilla Public License Version 1.1 or later (the "[MPL](http://www.mozilla.org/MPL/MPL-1.1.html)")
+ckeditor.java is distributed under the [GPL](http://www.gnu.org/licenses/gpl.html), [LGPL](http://www.gnu.org/licenses/lgpl.html), and [MPL](http://www.mozilla.org/MPL/MPL-1.1.html) Open Source licenses. This triple copyleft licensing model is flexible and allows you to choose the license that is best suited for your needs. The Open Source licenses are intended for:
+
+* Integrating ckeditor.java into Open Source software.
+* Personal and educational use of ckeditor.java.
+* Integrating ckeditor.java in commercial software while at the same time satisfying the terms of the Open Source license.
