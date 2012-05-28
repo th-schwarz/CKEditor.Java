@@ -1,13 +1,31 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.thischwa</groupId>
 	<artifactId>ckeditor-java</artifactId>
+	<groupId>de.thischwa.ckeditor</groupId>
 	<version>0.1-SNAPSHOT</version>
-
+	<packaging>jar</packaging>
 	<description>Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
-	<name>CKEditor Java backend</name>
+	<name>CKEditor.Java</name>
 	
+	<issueManagement>
+		<url>https://github.com/th-schwarz/ckeditor.java/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<scm>
+		<url>https://github.com/th-schwarz/ckeditor.java</url>
+		<connection>scm:git:git://github.com/th-schwarz/ckeditor.java.git</connection>
+		<developerConnection>scm:git:git@github.com:th-schwarz/ckeditor.java.git</developerConnection>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>thischwa.repo</id>
+			<url>ftp://ftp.strato.com/</url>
+		</repository>
+	</distributionManagement>
+		
 	<properties>
 		<project.source.version>1.6</project.source.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -34,16 +52,6 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.4</version>
 		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.8.5</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-jaxrs</artifactId>
-			<version>1.8.5</version>
-		</dependency>
 		
 		<!-- junit testing -->
 		<dependency>
@@ -67,12 +75,114 @@
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-compiler-plugin</artifactId>
+	          <version>2.4</version>
 				<configuration>
 					<source>${project.source.version}</source>
 					<target>${project.source.version}</target>
 				</configuration>
 			</plugin>
+			
+			<plugin>
+				<!-- build the javadoc jar -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- build the source jar -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<configuration>
+					<excludes>
+						<exclude>**/package-info.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- build the site -->
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.0-beta-3</version>
+				<configuration>
+					<inputEncoding>${project.reporting.inputEncoding}</inputEncoding>
+					<outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
+					<reportPlugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-project-info-reports-plugin</artifactId>
+							<version>2.4</version>
+							<configuration>
+								<dependencyDetailsEnabled>false</dependencyDetailsEnabled>
+								<dependencyLocationsEnabled>false</dependencyLocationsEnabled>
+							</configuration>
+							<reports>
+								<report>project-team</report>
+								<report>license</report>
+								<report>dependencies</report>
+								<report>issue-tracking</report>
+							</reports>
+						</plugin>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-javadoc-plugin</artifactId>
+							<version>2.8</version>
+							<configuration>
+								<show>package</show>
+								<nohelp>true</nohelp>
+								<top><![CDATA[<h1>${project.name}</h1>]]></top>
+								<bottom><![CDATA[Copyright &#169; {inceptionYear}-{currentYear} <a href="http://www.thischwa.de">Thilo Schwarz<a>. All rights reserved.]]></bottom>
+								<links>
+									<link>http://docs.oracle.com/javase/6/docs/api/</link>
+								</links>
+							</configuration>
+							<reports>
+								<report>javadoc</report>
+							</reports>
+						</plugin>
+					</reportPlugins>
+				</configuration>
+			</plugin>
+			<plugin>
+				<!-- use mvn site:site for site upload -->
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.3</version>
+				<configuration>
+					<message>Creating site for ${project.version}</message>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>site</phase>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+	<developers>
+		<developer>
+			<id>th-schwarz</id>
+			<name>Thilo Schwarz</name>
+			<email>thilo.schwarz AT googlemail.com</email>
+			<url>http://www.thischwa.de</url>
+			<roles>
+				<role>Head Project Manager</role>
+				<role>Developer</role>
+			</roles>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
 </project>

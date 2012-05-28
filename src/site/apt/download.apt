@@ -1,0 +1,33 @@
+                                    ----------------------------
+											  Download
+                                    ----------------------------
+                                    
+Manually download
+
+  Every distribution can be found in our {{{https://github.com/th-schwarz/ckeditor.java/downloads}download area}}.
+
+
+Using Maven2
+
+  JII isn't in the official maven repositories yet. But the author provides a public repository. To use it,
+  you have to add the following snippets to your pom:
+  
+
++------------------------------------------------------------------------------+
+	<repositories>
+		<repository>
+			<id>thischwa-repro</id>
+			<url>http://maven-repo.thischwa.de/</url>
+		</repository>
+	</repositories>
++------------------------------------------------------------------------------+
+
+  And to the dependencies add the following:
+
++------------------------------------------------------------------------------+
+	<dependency>
+		<groupId>de.thischwa.ckeditor</groupId>
+		<artifactId>ckeditor-java</artifactId>
+		<version>${ckeditor-java.version}</version>
+	</dependency>
++------------------------------------------------------------------------------+  
