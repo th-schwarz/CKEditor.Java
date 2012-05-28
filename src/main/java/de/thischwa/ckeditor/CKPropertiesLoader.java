@@ -37,7 +37,7 @@ import org.slf4j.LoggerFactory;
  * </ol> 
  * Please note: The user-defined properties <em>override</em> the default one.<br/> 
  * Moreover, you can set properties programmatically too ({@link #setProperty(String, String)}) 
- * but make sure to override them <em>before</em> the first call of that specific property.
+ * but make sure to override them <em>before</em> the first call of any property.
  */
 public class CKPropertiesLoader {
 	private static final Logger logger = LoggerFactory.getLogger(CKPropertiesLoader.class);
@@ -150,7 +150,7 @@ public class CKPropertiesLoader {
 	 */
 	public static String getEditorBasePath() {
 		String basePath = properties.getProperty("ckeditor.basePath");
-		if(!basePath.endsWith(basePath))
+		if(!basePath.endsWith("/"))
 			basePath += "/";
 		return basePath;
 	}

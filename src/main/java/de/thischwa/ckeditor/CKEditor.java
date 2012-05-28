@@ -31,7 +31,7 @@ import de.thischwa.ckeditor.util.XHtmlTagTool;
 
 /**
  * The object-oriented representation of the <a href="http://ckeditor.com">CKEditor</a>. 
- * It can be configured as any other JavaBean type class. The final output of this class is HTML code.<br />
+ * It can be configured as any other JavaBean type class. The final output of this class is HTML code.
  */
 public class CKEditor {
 	private HttpServletRequest request;
@@ -77,7 +77,7 @@ public class CKEditor {
 	}
 
 	/**
-	 * Class constructor. 
+	 * Minimal constructor. 
 	 * 
 	 * @param request The current {@link HttpServletRequest}.
 	 * @param instanceName The unique name of this editor.
@@ -99,13 +99,13 @@ public class CKEditor {
 	 * @param value The initial value to be edit as HTML markup.
 	 * @throws IllegalArgumentException If 'request' is null or if 'instanceName' is empty or not a valid XHTML id.
 	 */
-	public CKEditor(final HttpServletRequest request, final String instanceName, final int height, final int width, final String value) throws IllegalArgumentException {
+	public CKEditor(final HttpServletRequest request, final String instanceName, final String height, final String width, final String value) throws IllegalArgumentException {
 		this(request, instanceName, value);
 		setSize(width, height);
 	}
 
 	/**
-	 * Setter for the initial value to be edit as HTML markup.
+	 * Set the initial value to be edit as HTML markup.
 	 * 
 	 * @param value The value to be edit.
 	 */ 
@@ -115,6 +115,8 @@ public class CKEditor {
 
 	/**
 	 * Register the name to use for the id-tag of the underlying textarea element.
+	 * 
+	 * @param fieldID The name for the id-tag. If it is <code>null</code>, the <code>instanceName</code> of the editor is used.
 	 */
 	public void setFieldID(final String fieldID) {
 		if (StringUtils.isNullOrEmptyOrBlank(fieldID))
@@ -149,19 +151,32 @@ public class CKEditor {
 	/**
 	 * Register the size of the underlying textarea element.
 	 * 
-	 * @param width The width of the textarea element.
-	 * @param height The height of the textarea element.
+	 * @param width The width of the textarea element, (CSS-style value).
+	 * @param height The height of the textarea element, (CSS-style value).
 	 */
-	public void setSize(final int width, final int height) {
-		this.width = String.valueOf(width);
-		this.height = String.valueOf(height);
+	public void setSize(final String width, final String height) {
+		this.width = width;
+		this.height = height;
+	}
+	
+	/**
+	 * Register the columns and rows for the underlying textarea element.
+	 * 
+	 * @param cols Columns for the underlying textarea element.
+	 * @param rows Rows for the underlying textarea element.
+	 */
+	public void setColsAndRows(int cols, int rows) {
+		this.textAreaCols = String.valueOf(cols);
+		this.textAreaRows = String.valueOf(rows);
 	}
 	
 	/**
 	 * Obtain the value for the desired property key.
 	 * 
-	 * @param name The name of the parameter (case-sensitive).
+	 * @param name The name of the property (case-sensitive).
 	 * @return The value represented by the desired key, or null.
+	 * 
+	 * @see CKEditorConfig#get(String)
 	 */
 	public String getProperty(String name) {
 		return config.get(name);
@@ -170,14 +185,18 @@ public class CKEditor {
 	/**
 	 * Register the desired property.
 	 * 
-	 * @param key The key of the property.
+	 * @param key The key of the property (case-sensitive).
 	 * @param value The value of the property.
+	 * 
+	 * @see CKEditorConfig#put(String, String)
 	 */
 	public void setProperty(final String key, final String value) {
 		config.put(key, value);
 	}
 
 	/**
+	 * Register the name of the toolbar to use.
+	 * 
 	 * @param name The name of the toolbar.
 	 */
 	public void setToolbarName(final String name) {
@@ -187,19 +206,43 @@ public class CKEditor {
 			config.put("toolbar", name);
 	}
 
+	/**
+	 * Register a toolbar definition, see <a href="http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Toolbar">Toolbar Definition</a>.
+	 * If the desired name doesn't meets the required naming pattern of the CKEditor, it will be extended to <code>toolbar_[name]</code>.
+	 * 
+	 * @param name The name of the toolbar. 
+	 * @param definition The toolbar definition, must be JSON!
+	 */
 	public void setToolbarDefinition(final String name, final String definition) {
 		String toolbarName = (name.startsWith("toolbar_")) ? name : "toolbar_".concat(name);
 		config.put(toolbarName, definition);
 	}
 	
+	/**
+	 * Construct an unmodifiable map of all properties.
+	 * 
+	 * @return Unmodifiable map of all properties.
+	 * @see CKEditorConfig#getUnmodifiableProperties()
+	 */
 	public Map<String, String> getProperties() {
 		return config.getUnmodifiableProperties();
 	}
 
+	/**
+	 * Create the html for using the editor.
+	 * 
+	 * @return Html of the browser.
+	 * @see CKEditor#toString()
+	 */
 	public String createHtml() {
 		return toString();
 	}
 
+	/**
+	 * Build the html for using the editor in a web environment. 
+	 * 
+	 * @return The html of the editor or <code>null</code> if the current browser isn't compatible.
+	 */ 
 	@Override
 	public String toString() {
 		if(!isCompatible) 
@@ -208,12 +251,13 @@ public class CKEditor {
 		setFieldID(fieldID);
 		StringBuilder sb = new StringBuilder();
 
+		// build the textarea
+		sb.append(buildTextArea());
+
 		// build js to load the editor
 		sb.append(String.format("<script type=\"text/javascript\" src=\"%s%sckeditor.js\"></script>\n", 
 				request.getContextPath(), basePath)); 
-
-		// build the textarea
-		sb.append(buildTextArea());
+		
 		sb.append("\n\n");
 
 		// build the in-page configuration

@@ -32,7 +32,7 @@ import de.thischwa.ckeditor.util.StringUtils;
 /**
  * Simple object to handle the properties of the CKEditor.
  */
-public class CKEditorConfig {
+class CKEditorConfig {
 	private Map<String, String> configEntries;
 	
 	CKEditorConfig() {
