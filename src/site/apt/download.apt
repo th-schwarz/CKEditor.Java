@@ -4,13 +4,13 @@
                                     
 Manually download
 
-  Every distribution can be found in our {{{https://github.com/th-schwarz/ckeditor.java/downloads}download area}}.
+  Every distribution can be found in our {{{https://github.com/th-schwarz/CKEditor.Java/downloads}download area}}.
 
 
 Using Maven2
 
-  JII isn't in the official maven repositories yet. But the author provides a public repository. To use it,
-  you have to add the following snippets to your pom:
+  CKEditor.Java isn't already part of the official maven repositories. But the author provides a public repository. In order to
+  use it, you have to add the following snippets to your pom:
   
 
 +------------------------------------------------------------------------------+
@@ -22,7 +22,7 @@ Using Maven2
 	</repositories>
 +------------------------------------------------------------------------------+
 
-  And to the dependencies add the following:
+   To the dependencies add the following:
 
 +------------------------------------------------------------------------------+
 	<dependency>

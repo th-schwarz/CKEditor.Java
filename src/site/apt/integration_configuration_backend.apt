@@ -32,15 +32,15 @@ Configuration of the Backend
                  Like the common properties usage, you should use it only at the
                  start of your web application. If you don't have a kind of
                  an 'initialization' servlet, where you could place the
-                 <<<CKPropertiesLoader>>> calls, we suggest for you to write your own
-                 <<<ServletContextListener>>>. So you guarantee, you call the
+                 <<<CKPropertiesLoader>>> calls, we suggest writing your own
+                 <<<ServletContextListener>>>. Thus you guarantee, you call the
                  <<<CKPropertiesLoader>>> <before> the <<<ConnectorServlet>>> is
                  initialized.
 
   []
 
   As you can see, setting a property is equal in both ways. The tables below
-  list all configurable properties for the backend.
+  list all configurable properties for the CKEditor.Java.
   
 Configuration properties
 

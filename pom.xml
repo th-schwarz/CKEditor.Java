@@ -5,18 +5,25 @@
 	<groupId>de.thischwa.ckeditor</groupId>
 	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<description>Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
+	<description>The Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
 	<name>CKEditor.Java</name>
-	
+	<url>https://github.com/th-schwarz/CKEditor.Java</url>
+	<licenses>
+		<license>
+			<name>GPL, LGPL, MPL</name>
+			<url>LICENSE.txt</url>
+		</license>
+	</licenses>
+  
 	<issueManagement>
-		<url>https://github.com/th-schwarz/ckeditor.java/issues</url>
+		<url>https://github.com/th-schwarz/CKEditor.Java/issues</url>
 		<system>GitHub Issues</system>
 	</issueManagement>
 
 	<scm>
-		<url>https://github.com/th-schwarz/ckeditor.java</url>
-		<connection>scm:git:git://github.com/th-schwarz/ckeditor.java.git</connection>
-		<developerConnection>scm:git:git@github.com:th-schwarz/ckeditor.java.git</developerConnection>
+		<url>https://github.com/th-schwarz/CKEditor.Java</url>
+		<connection>scm:git:git://github.com/th-schwarz/CKEditor.Java.git</connection>
+		<developerConnection>scm:git:git@github.com:th-schwarz/CKEditor.Java.git</developerConnection>
 	</scm>
 
 	<distributionManagement>

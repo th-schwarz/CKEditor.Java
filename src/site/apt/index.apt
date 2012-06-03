@@ -2,18 +2,18 @@
 												About
                                     ----------------------------
                                     
-ckeditor.java
+CKEditor.Java
 
-  ... the Java backend for {{{http://ckeditor.com}CKEditor}}. It provides a object with a simple interface for 
-  creating and configuring an editor instance. This makes the deployment of the CKEditor a peace of cake.  
+  ... the Java backend for {{{http://ckeditor.com}CKEditor}}. It provides an object with a simple interface in order to 
+  create and configure an editor instance. This makes the deployment of the CKEditor a peace of cake.  
   It is targeted to be used in servlet-based systems like JSP as well as template engines 
   like {{{http://velocity.apache.org}Velocity}} or {{{http://freemarker.org}FreeMarker}}. 
   
-  It doesn't contains a connector backend for browsing and uploading files!!!  
+  It doesn't contain a connector backend for browsing and uploading files!!!  
   
-  << The project is in a very early alpha state and should not to be used in a productive environment! >>
+  << It's an early-state project and should not to be used in a productive environment! >>
 
   
 Call to Action
 
-  Help me to improve ckeditor.java. If you find a bug or if there is a missing feature, don't hesitate to file a {{{https://github.com/th-schwarz/ckeditor.java/issues}ticket}}.  
+  Help me to improve CKEditor.Java. If you find a bug or you miss certain features, don't hesitate to file a {{{https://github.com/th-schwarz/ckeditor.java/issues}ticket}}.  

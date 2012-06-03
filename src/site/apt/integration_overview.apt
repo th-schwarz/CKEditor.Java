@@ -8,20 +8,18 @@ Overview
   Let's have a look at a minimal code snippet to see how it works:
   
 +------------------------------------------------------------------------------+
-  CKEditor editor = new CKEditor(request, "field");
-  editor.setValue("This is some <strong>sample text</strong>.");
+  CKEditor editor = new CKEditor(request, "fieldName");
+  editor.setValue("This is some <strong>sample text</strong>."); <!-- initial value -->
   <!-- out.println(editor);  example for jsp -->
 +------------------------------------------------------------------------------+
 
-  <<#setValue>> sets the initial value to use in the editor.
-  
   That's all!
   
   <<It's really important>> to understand that there are two kinds of configurations:
   
-  * For the backend: Here the CKEditor.Java backend can be configured, see {{{./integration_configuration_backend.html}Configuration (backend)}}.
+  * For the backend - the configuration of the CKEditor.Java - see {{{./integration_configuration_backend.html}Configuration (backend)}}.
   
-  * For the frontend: Here the editor itself can be configured, see {{{./integration_configuration_frontend.html}Configuration (frontend)}}. 
-  For more information about the configuration settings of the editor refer the section 'Configuration' of the
+  * For the frontend - the configuration of the editor - see {{{./integration_configuration_frontend.html}Configuration (frontend)}}. 
+  For more information on configuration settings of the editor look at the section 'Configuration' of the
   {{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide}official developer's guide}}.
    
