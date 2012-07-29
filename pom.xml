@@ -10,7 +10,7 @@
 	<url>https://github.com/th-schwarz/CKEditor.Java</url>
 	<licenses>
 		<license>
-			<name>GPL, LGPL, MPL</name>
+			<name>GPL, MIT</name>
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
