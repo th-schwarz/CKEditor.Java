@@ -4,7 +4,7 @@
                                     
 CKEditor.Java
 
-  ... the Java backend for {{{http://ckeditor.com}CKEditor}}. It provides an object with a simple interface in order to 
+  ... the Java backend for the {{{http://ckeditor.com}CKEditor}}. It provides an object with a simple interface in order to 
   create and configure an editor instance. This makes the deployment of the CKEditor a peace of cake.  
   It is targeted to be used in servlet-based systems like JSP as well as template engines 
   like {{{http://velocity.apache.org}Velocity}} or {{{http://freemarker.org}FreeMarker}}. 

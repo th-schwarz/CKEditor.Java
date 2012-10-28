@@ -1,7 +1,7 @@
 CKEditor.Java
 =============
 
-Java backend of CKEditor. It provides a simple object for creating an editor instance.
+Java backend of [CKEditor](http://ckeditor.com). It provides a simple object for creating an editor instance.
 
 More informations can be found [here](http://th-schwarz.github.com/CKEditor.Java/).
 
