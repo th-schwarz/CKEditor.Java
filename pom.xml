@@ -57,7 +57,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.1</version>
+			<version>1.7.2</version>
 		</dependency>
 		
 		<!-- junit testing -->
@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.1</version>
+			<version>1.7.2</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
