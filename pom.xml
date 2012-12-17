@@ -34,7 +34,7 @@
 	</distributionManagement>
 		
 	<properties>
-		<project.source.version>1.6</project.source.version>
+		<project.jdk.version>1.6</project.jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.reporting.inputEncoding>UTF-8</project.reporting.inputEncoding>
@@ -80,10 +80,10 @@
 			<plugin>
 	          <groupId>org.apache.maven.plugins</groupId>
 	          <artifactId>maven-compiler-plugin</artifactId>
-	          <version>2.4</version>
+	          <version>3.0</version>
 				<configuration>
-					<source>${project.source.version}</source>
-					<target>${project.source.version}</target>
+					<source>${project.jdk.version}</source>
+					<target>${project.jdk.version}</target>
 				</configuration>
 			</plugin>
 			
@@ -116,7 +116,7 @@
 				<!-- build the site -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.0-beta-3</version>
+				<version>3.2</version>
 				<configuration>
 					<inputEncoding>${project.reporting.inputEncoding}</inputEncoding>
 					<outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
@@ -172,6 +172,25 @@
 						<phase>site</phase>
 					</execution>
 				</executions>
+			</plugin>
+			<plugin>
+				<!-- builds the distribution zip / it's bind to the package phase -->
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.4</version>
+		        <configuration>
+		          <descriptors>
+		            <descriptor>src/main/assembly/dist.xml</descriptor>
+		          </descriptors>
+		        </configuration>
+		        <executions>
+		        	<execution>
+		        		<id>dist</id>
+		        		<phase>package</phase>
+		        		<goals>
+		        			<goal>single</goal>
+		        		</goals>
+		        	</execution>
+		        </executions>
 			</plugin>
 		</plugins>
 	    <extensions>
