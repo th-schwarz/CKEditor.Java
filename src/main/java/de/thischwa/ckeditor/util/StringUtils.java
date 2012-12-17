@@ -32,16 +32,12 @@ public class StringUtils {
 
 	public static final boolean isNullOrEmpty(final String... strings) {
 		for (String string : strings) {
-			if (!isNullOrEmpty(string))
+			if (!(string == null || string.length() == 0))
 				return false;
 		}
 		return true;
 	}
-
-	private static boolean isNullOrEmpty(final String str) {
-		return (str == null || str.length() == 0);
-	}
-
+	
 	public static final boolean isNullOrEmptyOrBlank(final String str) {
 		if (isNullOrEmpty(str))
 			return true;
