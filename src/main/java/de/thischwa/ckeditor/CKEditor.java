@@ -44,8 +44,6 @@ public class CKEditor {
 	private String width = CKPropertiesLoader.getEditorWidth();
 	private String height = CKPropertiesLoader.getEditorHeight();
 	private String basePath = CKPropertiesLoader.getEditorBasePath();
-	private String textAreaCols = CKPropertiesLoader.getEditorTextareaCols();
-	private String textAreaRows = CKPropertiesLoader.getEditorTextareaRows();
 
 	private boolean isCompatible;
 	private CKEditorConfig config;
@@ -66,6 +64,8 @@ public class CKEditor {
 		
 		config = new CKEditorConfig();
 		config.put("toolbar", toolbar); // set the default toolbar
+		config.put("height", height); // set the default height
+		config.put("width", width); // set the default width
 
 		isCompatible = BrowserCompatibility.isCompatibleBrowser(request);
 		if(!isCompatible)
@@ -157,17 +157,6 @@ public class CKEditor {
 	public void setSize(final String width, final String height) {
 		this.width = width;
 		this.height = height;
-	}
-	
-	/**
-	 * Register the columns and rows for the underlying textarea element.
-	 * 
-	 * @param cols Columns for the underlying textarea element.
-	 * @param rows Rows for the underlying textarea element.
-	 */
-	public void setColsAndRows(int cols, int rows) {
-		this.textAreaCols = String.valueOf(cols);
-		this.textAreaRows = String.valueOf(rows);
 	}
 	
 	/**
@@ -275,8 +264,6 @@ public class CKEditor {
 
 	private String buildTextArea() {
 		XHtmlTagTool textAreaTag = new XHtmlTagTool("textarea", value);
-		textAreaTag.addAttribute("rows", textAreaRows);
-		textAreaTag.addAttribute("cols", textAreaCols);
 		textAreaTag.addAttribute("id", fieldID);
 		textAreaTag.addAttribute("name", instanceName);
 		textAreaTag.addAttribute("wrap", "virtual");
