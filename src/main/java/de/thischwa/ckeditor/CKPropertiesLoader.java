@@ -131,19 +131,6 @@ public class CKPropertiesLoader {
 	public static String getEditorHeight() {
 		return properties.getProperty("ckeditor.height");
 	}
-	
-	/**
-	 * Returns <code>ckeditor.textarea.cols</code> property
-	 */
-	public static String getEditorTextareaCols() {
-		return properties.getProperty("ckeditor.textarea.cols");
-	}
-	/**
-	 * Returns <code>ckeditor.textarea.rows</code> property
-	 */
-	public static String getEditorTextareaRows() {
-		return properties.getProperty("ckeditor.textarea.rows");
-	}
 
 	/**
 	 * Returns <code>ckeditor.basePath</code> property and ensures that it ends with '/'.
