@@ -110,7 +110,7 @@ public class CKEditor {
 	 * @param value The value to be edit.
 	 */ 
 	public void setValue(final String value) {
-		this.value = value;
+		this.value = StringUtils.isNullOrEmptyOrBlank(value) ? XHtmlTagTool.SPACE : value;
 	}
 
 	/**
