@@ -16,6 +16,9 @@
 			<item name="Configuration of the backend" href="/integration_configuration_backend.html"/>
 			<item name="Configuration of the frontend" href="/integration_configuration_frontend.html"/>
 		</menu>
+		<menu name="Examples">
+			<item name="Overview" href="/examples_overview.html"/>
+		</menu>
 		<menu ref="reports"/>
 		<links>
 			<item name="CKEditor.Java github:page" href="http://github.com/th-schwarz/CKEditor.Java"/>

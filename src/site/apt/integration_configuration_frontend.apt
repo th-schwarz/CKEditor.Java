@@ -24,7 +24,9 @@ Configuration of the frontend.
   
 * Using a Custom Configuration File
   
-  This should be the preferred way to set global properties and can be done by <<<#setProperty>>> too. Example:
+  This should be the preferred way to set global properties and can be done by <<<#setProperty>>> too. 
+  
+  Example:
  
 +------------------------------------------------------------------------------+
   CKEditor editor = new CKEditor(request, "field");
