@@ -30,20 +30,12 @@ public class StringUtils {
 	/** The empty string {@code ""}. */
 	public static final String EMPTY_STRING = "";
 
-	public static final boolean isNullOrEmpty(final String... strings) {
-		for (String string : strings) {
-			if (!_isNullOrEmpty(string))
-				return false;
-		}
-		return true;
-	}
-
-	private static boolean _isNullOrEmpty(final String str) {
+	public static final boolean isNullOrEmpty(final String str) {
 		return (str == null || str.length() == 0);
 	}
 
 	public static final boolean isNullOrEmptyOrBlank(final String str) {
-		if (_isNullOrEmpty(str))
+		if (isNullOrEmpty(str))
 			return true;
 		for (int i = 0; i < str.length(); i++) {
 			if (!Character.isWhitespace(str.charAt(i)))

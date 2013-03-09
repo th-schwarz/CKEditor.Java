@@ -251,7 +251,7 @@ public class CKEditor {
 
 		// build the in-page configuration
 		String inPageConfig = buildConfig();
-		sb.append(suroundScript(inPageConfig));
+		sb.append(suroundScriptTag(inPageConfig));
 		return sb.toString();
 	}
 
@@ -271,7 +271,7 @@ public class CKEditor {
 		return textAreaTag.toString();
 	}
 
-	private String suroundScript(String js) {
+	private String suroundScriptTag(String js) {
 		String script = String.format("<script type=\"text/javascript\">//<![CDATA[\n%s\n//]]></script>\n", js);
 		return script;
 	}
