@@ -33,10 +33,10 @@ import de.thischwa.ckeditor.util.StringUtils;
  * Simple object to handle the properties of the CKEditor.
  */
 class CKEditorConfig {
-	private Map<String, String> configEntries;
+	private Map<String, Object> configEntries;
 	
 	CKEditorConfig() {
-		configEntries = new HashMap<String, String>();
+		configEntries = new HashMap<String, Object>();
 	}
 	
 	void put(final String key, final String value) {
@@ -44,7 +44,7 @@ class CKEditorConfig {
 	}
 	
 	String get(final String key) {
-		return configEntries.get(key);
+		return configEntries.get(key).toString();
 	}
 
 	 Set<String> keySet() {
@@ -55,7 +55,7 @@ class CKEditorConfig {
 		configEntries.remove(key);
 	}
 	
-	Map<String, String> getUnmodifiableProperties() {
+	Map<String, Object> getUnmodifiableProperties() {
 		return Collections.unmodifiableMap(configEntries);
 	}
 	
@@ -64,7 +64,7 @@ class CKEditorConfig {
 		
 		// cleaning of blank or empty values
 		for(String key: configEntries.keySet()) {
-			String val = configEntries.get(key);
+			String val = configEntries.get(key).toString();
 			if (StringUtils.isNullOrEmptyOrBlank(val)) {
 				configEntries.remove(key);
 				continue;
