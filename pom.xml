@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>ckeditor-java</artifactId>
 	<groupId>de.thischwa.ckeditor</groupId>
@@ -13,7 +14,7 @@
 			<url>LICENSE.txt</url>
 		</license>
 	</licenses>
-  
+
 	<issueManagement>
 		<url>https://github.com/th-schwarz/CKEditor.Java/issues</url>
 		<system>GitHub Issues</system>
@@ -31,7 +32,7 @@
 			<url>ftp://ftp.strato.com/</url>
 		</repository>
 	</distributionManagement>
-		
+
 	<properties>
 		<project.jdk.version>1.6</project.jdk.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,7 +59,7 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.2</version>
 		</dependency>
-		
+
 		<!-- junit testing -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -77,20 +78,25 @@
 	<build>
 		<plugins>
 			<plugin>
-	          <groupId>org.apache.maven.plugins</groupId>
-	          <artifactId>maven-compiler-plugin</artifactId>
-	          <version>3.0</version>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
 				<configuration>
 					<source>${project.jdk.version}</source>
 					<target>${project.jdk.version}</target>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<!-- build the javadoc jar -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.8</version>
+				<version>2.9</version>
+				<configuration>
+					<links>
+						<link>http://docs.oracle.com/javase/6/docs/api/</link>
+					</links>
+				</configuration>
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -138,9 +144,9 @@
 						<plugin>
 							<groupId>org.apache.maven.plugins</groupId>
 							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>2.8</version>
+							<version>2.9</version>
 							<configuration>
-								<show>package</show>
+								<show>public</show>
 								<nohelp>true</nohelp>
 								<top><![CDATA[<h1>${project.name}</h1>]]></top>
 								<bottom><![CDATA[Copyright &#169; {inceptionYear}-{currentYear} <a href="http://www.thischwa.de">Thilo Schwarz<a>. All rights reserved.]]></bottom>
@@ -176,32 +182,32 @@
 				<!-- builds the distribution zip / it's bind to the package phase -->
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.4</version>
-		        <configuration>
-		          <descriptors>
-		            <descriptor>src/main/assembly/dist.xml</descriptor>
-		          </descriptors>
-		        </configuration>
-		        <executions>
-		        	<execution>
-		        		<id>dist</id>
-		        		<phase>package</phase>
-		        		<goals>
-		        			<goal>single</goal>
-		        		</goals>
-		        	</execution>
-		        </executions>
+				<configuration>
+					<descriptors>
+						<descriptor>src/main/assembly/dist.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>dist</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
-	    <extensions>
-	      <!-- Enabling the use of FTP -->
-	      <extension>
-	        <groupId>org.apache.maven.wagon</groupId>
-	         <artifactId>wagon-ftp</artifactId>
-	         <version>1.0-beta-6</version>
-	      </extension>
-	    </extensions>
+		<extensions>
+			<!-- Enabling the use of FTP -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>1.0-beta-6</version>
+			</extension>
+		</extensions>
 	</build>
-	
+
 	<developers>
 		<developer>
 			<id>th-schwarz</id>

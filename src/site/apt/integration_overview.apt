@@ -1,7 +1,7 @@
-                                    ----------------------------
-											Overview
-                                    ----------------------------
-                                    
+   ----------------------------
+   Overview
+   ----------------------------
+
 Overview
 
   The main object of the editor is {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}}.  
@@ -22,4 +22,13 @@ Overview
   * For the frontend - the configuration of the editor - see {{{./integration_configuration_frontend.html}Configuration (frontend)}}. 
   For more information on configuration settings of the editor look at the section 'Configuration' of the
   {{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide}official developer's guide}}.
-   
+  
+  []
+  
+===
+  
+  [Hint:]
+    There are several ways to call the editor with javascript. CKEditor.Java currently uses\
+    <<<CKEDITOR.replace( element, [config] )>>>.\
+    That's quite enough to make one editor completely configurable. The support of more than one editor isn't implemented yet,
+    but it will be considered in future releases.

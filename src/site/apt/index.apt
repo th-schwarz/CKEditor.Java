@@ -1,7 +1,7 @@
-                                    ----------------------------
-												About
-                                    ----------------------------
-                                    
+   ----------------------------
+   About
+   ----------------------------
+                    
 CKEditor.Java
 
   ... the Java backend for the {{{http://ckeditor.com}CKEditor}}. It provides an object with a simple interface in order to 
@@ -9,21 +9,22 @@ CKEditor.Java
   It is targeted to be used in servlet-based systems like JSP as well as template engines 
   like {{{http://velocity.apache.org}Velocity}} or {{{http://freemarker.org}FreeMarker}}. 
   
-  It doesn't contain a connector backend for browsing and uploading files!!!  
+  It doesn't contain a connector backend for browsing and uploading files!!!
   
-  << It's an early-state project and should not to be used in a productive environment! >>
-  
+* Differences related to the <<<CKEditor for Java>>>
+
   There are some interesting differences between this library and the library which is provided by the official
   CKEditor team ({{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Java/Integration}CKEditor for Java}}):
   
-  * CKEditor.Java isn't focused on JSP (and provides currently no tag library).
+  * CKEditor.Java isn't focused on JSP and can be used in all servlet-based systems.\
+    A tag library isn't provided yet!
   
   * CKEditor.Java has an intelligent handling of properties: In the meaning of 'convention over configuration' 
     there are defaults for all properties (they are optional). The CKEditor.Java provides different ways to
     override these properties.
     
-  * CKEditor.Java uses the state-of-the-art logging facade {{{http://www.slf4j.org}slf4j}}. Therefore the preferred
-    logging framework can be used.
+  * CKEditor.Java uses the state-of-the-art logging facade {{{http://www.slf4j.org}slf4j}}. The preferred
+    logging framework can be used!
 
   
 Call to Action
