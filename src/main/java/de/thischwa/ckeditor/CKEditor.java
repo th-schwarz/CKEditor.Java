@@ -44,6 +44,8 @@ public class CKEditor {
 	private String width = CKPropertiesLoader.getEditorWidth();
 	private String height = CKPropertiesLoader.getEditorHeight();
 	private String basePath = CKPropertiesLoader.getEditorBasePath();
+	
+	private boolean useDiv = false;
 
 	private boolean isCompatible;
 	private CKEditorConfig config;
@@ -149,6 +151,23 @@ public class CKEditor {
 	}
 	
 	/**
+	 * Defines which html-element will be used to construct the editor.
+	 *  
+	 * @param enabled if <code>true</code> a 'div'-element, otherwise a 'textarea'-element will be build.
+	 */
+	public void useDiv(boolean enabled) {
+		useDiv = enabled;
+	}
+	
+	/**
+	 * Calling this method ensures a 'div' is building instead of a 'textarea'. <br/>
+	 * Just a wrapper for {@link #useDiv(boolean)}.
+	 */
+	public void useDiv() {
+		useDiv(true);
+	}
+	
+	/**
 	 * Register the size of the underlying textarea element.
 	 * 
 	 * @param width The width of the textarea element, (CSS-style value).
@@ -197,8 +216,12 @@ public class CKEditor {
 
 	/**
 	 * Register a toolbar definition, see <a href="http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Toolbar">Toolbar Definition</a>.
-	 * If the desired name doesn't meets the required naming pattern of the CKEditor, it will be extended to <code>toolbar_[name]</code>.
-	 * 
+	 * If the desired name doesn't meets the required naming pattern of the CKEditor, it will be extended to <code>toolbar_[name]</code>.<br/>
+	 * Example:
+	 * <pre>
+	 * editor.setToolbarName("myToolbar");
+	 * editor.setToolbarDefinition("myToolbar", "[{ 'name': 'basics', 'items': [ 'Bold','Italic','Strike','-','About' ] }]");
+	 * </pre>
 	 * @param name The name of the toolbar. 
 	 * @param definition The toolbar definition, must be JSON!
 	 */
@@ -213,7 +236,7 @@ public class CKEditor {
 	 * @return Unmodifiable map of all properties.
 	 * @see CKEditorConfig#getUnmodifiableProperties()
 	 */
-	public Map<String, String> getProperties() {
+	public Map<String, Object> getProperties() {
 		return config.getUnmodifiableProperties();
 	}
 
@@ -241,7 +264,7 @@ public class CKEditor {
 		StringBuilder sb = new StringBuilder();
 
 		// build the textarea
-		sb.append(buildTextArea());
+		sb.append(buildElement());
 
 		// build js to load the editor
 		sb.append(String.format("<script type=\"text/javascript\" src=\"%s%sckeditor.js\"></script>\n", 
@@ -262,13 +285,13 @@ public class CKEditor {
 		return sb.toString();
 	}
 
-	private String buildTextArea() {
-		XHtmlTagTool textAreaTag = new XHtmlTagTool("textarea", value);
-		textAreaTag.addAttribute("id", fieldID);
-		textAreaTag.addAttribute("name", instanceName);
-		textAreaTag.addAttribute("wrap", "virtual");
-		textAreaTag.addAttribute("style", String.format("width: %s; height: %s", width, height));
-		return textAreaTag.toString();
+	private String buildElement() {
+		String elementName = useDiv ? "div" : "textarea";
+		XHtmlTagTool elementTag = new XHtmlTagTool(elementName, value);
+		elementTag.addAttribute("id", fieldID);
+		elementTag.addAttribute("name", instanceName);
+		elementTag.addAttribute("style", String.format("width: %s; height: %s", width, height));
+		return elementTag.toString();
 	}
 
 	private String suroundScriptTag(String js) {

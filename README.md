@@ -1,5 +1,4 @@
-CKEditor.Java
-=============
+# CKEditor.Java
 
 Java backend of the [CKEditor](http://ckeditor.com). It provides a simple object for creating an editor instance.
 
@@ -8,3 +7,8 @@ CKEditor.Java is distributed under the [GPL](http://www.gnu.org/licenses/gpl.htm
 * Integrating CKEditor.Java into Open Source software.
 * Personal and educational use of CKEditor.Java.
 * Integrating CKEditor.Java in commercial software while at the same time satisfying the terms of the Open Source license.
+
+## Changes 
+
+* 0.2-SNAPSHOT
+  * issue#5: support creating of a div for building the editor   
