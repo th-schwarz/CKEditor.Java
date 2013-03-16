@@ -28,7 +28,7 @@ Overview
 ===
   
   [Hint:]
-    There are several ways to call the editor with javascript. CKEditor.Java currently uses\
+    There are several ways to call the editor with javascript. CKEditor.Java just uses\
     <<<CKEDITOR.replace( element, [config] )>>>.\
-    That's quite enough to make one editor completely configurable. The support of more than one editor isn't implemented yet,
+    That's quite enough to make one editor completely configurable. The support of multiple editor isn't implemented yet,
     but it will be considered in future releases.

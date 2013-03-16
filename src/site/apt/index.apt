@@ -9,11 +9,13 @@ CKEditor.Java
   It is targeted to be used in servlet-based systems like JSP as well as template engines 
   like {{{http://velocity.apache.org}Velocity}} or {{{http://freemarker.org}FreeMarker}}. 
   
-  It doesn't contain a connector backend for browsing and uploading files!!!
+  It doesn't contain a connector backend for browsing and uploading files!!! But there is another project of mine
+  which provides this functionality: {{{http://th-schwarz.github.com/C5Connector.Java/}C5Connector.Java}}\
+  It's a servlet-based backend for the {{{http://github.com/simogeo/Filemanager}filemanager of corefive}}. 
   
 * Differences related to the <<<CKEditor for Java>>>
 
-  There are some interesting differences between this library and the library which is provided by the official
+  There are some mentionable differences between this library and the library which is provided by the official
   CKEditor team ({{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Java/Integration}CKEditor for Java}}):
   
   * CKEditor.Java isn't focused on JSP and can be used in all servlet-based systems.\
@@ -29,4 +31,5 @@ CKEditor.Java
   
 Call to Action
 
-  Help me to improve CKEditor.Java. If you find a bug or you miss certain features, don't hesitate to file a {{{https://github.com/th-schwarz/ckeditor.java/issues}ticket}}.  
+  Help me to improve CKEditor.Java. If you find a bug or you miss certain features, don't hesitate to file
+  a {{{https://github.com/th-schwarz/ckeditor.java/issues}ticket}}.  

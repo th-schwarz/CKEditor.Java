@@ -7,6 +7,7 @@ Overview
   The examples in this section aren't completely runnable. Each of these just demonstrates an exemplary feature.
   
 * Simplest editor call
+
 +---+
   CKEditor editor = new CKEditor(request, "fieldname");
   editor.setValue("This is some <strong>sample text</strong>.");
