@@ -35,6 +35,8 @@ import de.thischwa.ckeditor.util.XHtmlTagTool;
  */
 public class CKEditor {
 	private HttpServletRequest request;
+	
+	/** 'className' of the element */
 	private String instanceName;
 	private String fieldID = null;
 
@@ -153,7 +155,7 @@ public class CKEditor {
 	/**
 	 * Defines which html-element will be used to construct the editor.
 	 *  
-	 * @param enabled if <code>true</code> a 'div'-element, otherwise a 'textarea'-element will be build.
+	 * @param enabled if <code>true</code> a 'div'-element, otherwise a 'textarea'-element will be built.
 	 */
 	public void useDiv(boolean enabled) {
 		useDiv = enabled;
@@ -241,20 +243,10 @@ public class CKEditor {
 	}
 
 	/**
-	 * Create the html for using the editor.
+	 * Build the html/javascript code for using the editor in a web environment. 
 	 * 
-	 * @return Html of the browser.
-	 * @see CKEditor#toString()
+	 * @return The code of the editor or <code>null</code> if the current browser isn't compatible.
 	 */
-	public String createHtml() {
-		return toString();
-	}
-
-	/**
-	 * Build the html for using the editor in a web environment. 
-	 * 
-	 * @return The html of the editor or <code>null</code> if the current browser isn't compatible.
-	 */ 
 	@Override
 	public String toString() {
 		if(!isCompatible) 
@@ -281,7 +273,7 @@ public class CKEditor {
 	private String buildConfig() {
 		String configStr = config.buildJSON();
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("CKEDITOR.replace( '%s', %s)", instanceName, configStr));
+		sb.append(String.format("CKEDITOR.replace( '%s', %s);", instanceName, configStr));
 		return sb.toString();
 	}
 
@@ -298,5 +290,4 @@ public class CKEditor {
 		String script = String.format("<script type=\"text/javascript\">//<![CDATA[\n%s\n//]]></script>\n", js);
 		return script;
 	}
-
 }
