@@ -22,7 +22,7 @@
 package de.thischwa.ckeditor;
 
 import java.util.Collections;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -36,11 +36,15 @@ class CKEditorConfig {
 	private Map<String, Object> configEntries;
 	
 	CKEditorConfig() {
-		configEntries = new HashMap<String, Object>();
+		configEntries = new LinkedHashMap<String, Object>();
 	}
 	
 	void put(final String key, final String value) {
 		configEntries.put(key, value);
+	}
+	
+	void putAll(Map<String, String> props) {
+		configEntries.putAll(props);
 	}
 	
 	String get(final String key) {
@@ -81,7 +85,7 @@ class CKEditorConfig {
 		for(String key : configEntries.keySet()) {
 			if(!isFirst)
 				sb.append(",\n");
-			sb.append(String.format("   %s: %s", key, configEntries.get(key)));
+			sb.append(String.format(" %s : %s ", key, configEntries.get(key)));
 			isFirst = false;
 		}
 		sb.append("}");

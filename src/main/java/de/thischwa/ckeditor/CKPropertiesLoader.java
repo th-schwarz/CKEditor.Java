@@ -23,6 +23,8 @@ package de.thischwa.ckeditor;
 
 import java.io.BufferedInputStream;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.slf4j.Logger;
@@ -85,6 +87,17 @@ public class CKPropertiesLoader {
 			}
 		}
 	}
+	
+	static Map<String, String> getAllEditorProperties() {
+		Map<String, String> props = new HashMap<String, String>();
+		for(Object keyObj : properties.keySet()) {
+			String key = keyObj.toString();
+			if(key.startsWith("default.") || key.startsWith("ckeditor."))
+				continue;
+			props.put(key, properties.getProperty(key));
+		}
+		return props;
+	}
 
 	/**
 	 * Searches for the property with the specified key in this property list.
@@ -111,27 +124,6 @@ public class CKPropertiesLoader {
 		return properties.getProperty("default.encoding");
 	}
 	
-	/**
-	 * Returns <code>ckeditor.toolbar</code> property
-	 */
-	public static String getEditorToolbar() {
-		return properties.getProperty("ckeditor.toolbar");
-	}
-
-	/**
-	 * Returns <code>ckeditor.width</code> property
-	 */
-	public static String getEditorWidth() {
-		return properties.getProperty("ckeditor.width");
-	}
-
-	/**
-	 * Returns <code>ckeditor.height</code> property
-	 */
-	public static String getEditorHeight() {
-		return properties.getProperty("ckeditor.height");
-	}
-
 	/**
 	 * Returns <code>ckeditor.basePath</code> property and ensures that it ends with '/'.
 	 */

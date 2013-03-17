@@ -34,6 +34,7 @@ import de.thischwa.ckeditor.util.XHtmlTagTool;
  * It can be configured as any other JavaBean type class. The final output of this class is HTML code.
  */
 public class CKEditor {
+	
 	private HttpServletRequest request;
 	
 	/** 'className' of the element */
@@ -42,12 +43,11 @@ public class CKEditor {
 
 	// editor defaults
 	private String value = StringUtils.EMPTY_STRING;
-	private String toolbar = CKPropertiesLoader.getEditorToolbar();
-	private String width = CKPropertiesLoader.getEditorWidth();
-	private String height = CKPropertiesLoader.getEditorHeight();
+	private String width = CKPropertiesLoader.getProperty("width");
+	private String height = CKPropertiesLoader.getProperty("height");
 	private String basePath = CKPropertiesLoader.getEditorBasePath();
 	
-	private boolean useDiv = false;
+	private boolean useDiv;
 
 	private boolean isCompatible;
 	private CKEditorConfig config;
@@ -66,10 +66,9 @@ public class CKEditor {
 			throw new IllegalArgumentException("instanceName cannot be empty");
 		this.request = request;
 		
+		// setting the defaults
 		config = new CKEditorConfig();
-		config.put("toolbar", toolbar); // set the default toolbar
-		config.put("height", height); // set the default height
-		config.put("width", width); // set the default width
+		config.putAll(CKPropertiesLoader.getAllEditorProperties());
 
 		isCompatible = BrowserCompatibility.isCompatibleBrowser(request);
 		if(!isCompatible)
@@ -193,7 +192,7 @@ public class CKEditor {
 	}
 	
 	/**
-	 * Register the desired property.
+	 * Register the desired frontend property.
 	 * 
 	 * @param key The key of the property (case-sensitive).
 	 * @param value The value of the property.
@@ -273,7 +272,7 @@ public class CKEditor {
 	private String buildConfig() {
 		String configStr = config.buildJSON();
 		StringBuilder sb = new StringBuilder();
-		sb.append(String.format("CKEDITOR.replace( '%s', %s);", instanceName, configStr));
+		sb.append(String.format("CKEDITOR.replace( '%s', %s );", instanceName, configStr));
 		return sb.toString();
 	}
 
@@ -282,7 +281,8 @@ public class CKEditor {
 		XHtmlTagTool elementTag = new XHtmlTagTool(elementName, value);
 		elementTag.addAttribute("id", fieldID);
 		elementTag.addAttribute("name", instanceName);
-		elementTag.addAttribute("style", String.format("width: %s; height: %s", width, height));
+		if(!StringUtils.isNullOrEmptyOrBlank(height) && !StringUtils.isNullOrEmptyOrBlank(width))
+			elementTag.addAttribute("style", String.format("width: %s; height: %s", width, height));
 		return elementTag.toString();
 	}
 
