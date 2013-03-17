@@ -29,7 +29,7 @@ import org.junit.Test;
  * Tests for {@link BrowserCompatibility}.<br />
  * User-Agent-Strings are taken from: http://www.useragentstring.com/pages/useragentstring.php
  */
-public class BrowserCompatibilityTest {
+public class TestBrowserCompatibility {
 
 	@Test
 	public void testIE4Win() throws Exception {

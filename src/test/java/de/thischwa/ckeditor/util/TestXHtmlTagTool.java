@@ -32,7 +32,7 @@ import de.thischwa.ckeditor.util.XHtmlTagTool;
  *
  * @version $Id$
  */
-public class XHtmlTagToolTest {
+public class TestXHtmlTagTool {
 
 	@Test
 	public void testClosingTag01() throws Exception {
