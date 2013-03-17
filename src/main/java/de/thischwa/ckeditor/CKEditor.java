@@ -180,12 +180,10 @@ public class CKEditor {
 	}
 	
 	/**
-	 * Obtain the value for the desired property key.
+	 * Obtain the value for the property key.
 	 * 
 	 * @param name The name of the property (case-sensitive).
 	 * @return The value represented by the desired key, or null.
-	 * 
-	 * @see CKEditorConfig#get(String)
 	 */
 	public String getProperty(String name) {
 		return config.get(name);
@@ -196,46 +194,24 @@ public class CKEditor {
 	 * 
 	 * @param key The key of the property (case-sensitive).
 	 * @param value The value of the property.
-	 * 
-	 * @see CKEditorConfig#put(String, String)
 	 */
 	public void setProperty(final String key, final String value) {
 		config.put(key, value);
 	}
 
 	/**
-	 * Register the name of the toolbar to use.
+	 * Remove the property represented by the key.
 	 * 
-	 * @param name The name of the toolbar.
+	 * @param key the key of the property to delete.
 	 */
-	public void setToolbarName(final String name) {
-		if(StringUtils.isNullOrEmptyOrBlank(name))
-			config.remove("toolbar");
-		else
-			config.put("toolbar", name);
-	}
-
-	/**
-	 * Register a toolbar definition, see <a href="http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Toolbar">Toolbar Definition</a>.
-	 * If the desired name doesn't meets the required naming pattern of the CKEditor, it will be extended to <code>toolbar_[name]</code>.<br/>
-	 * Example:
-	 * <pre>
-	 * editor.setToolbarName("myToolbar");
-	 * editor.setToolbarDefinition("myToolbar", "[{ 'name': 'basics', 'items': [ 'Bold','Italic','Strike','-','About' ] }]");
-	 * </pre>
-	 * @param name The name of the toolbar. 
-	 * @param definition The toolbar definition, must be JSON!
-	 */
-	public void setToolbarDefinition(final String name, final String definition) {
-		String toolbarName = (name.startsWith("toolbar_")) ? name : "toolbar_".concat(name);
-		config.put(toolbarName, definition);
+	public void removeProperty(final String key) {
+		config.remove(key);
 	}
 	
 	/**
 	 * Construct an unmodifiable map of all properties.
 	 * 
 	 * @return Unmodifiable map of all properties.
-	 * @see CKEditorConfig#getUnmodifiableProperties()
 	 */
 	public Map<String, Object> getProperties() {
 		return config.getUnmodifiableProperties();

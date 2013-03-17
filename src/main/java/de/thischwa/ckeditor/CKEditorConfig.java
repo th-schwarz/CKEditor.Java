@@ -50,8 +50,8 @@ class CKEditorConfig {
 	String get(final String key) {
 		return configEntries.get(key).toString();
 	}
-
-	 Set<String> keySet() {
+	
+	Set<String> keySet() {
 		return configEntries.keySet();
 	}
 
