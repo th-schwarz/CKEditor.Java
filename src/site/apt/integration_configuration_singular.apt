@@ -38,7 +38,7 @@ Singular Configuration
   
   [[1]] if a custom configuration file is used, this file is loaded and overwrites the defaults
   
-  [[1]] the page-in configuration overwrites the current configuration.
+  [[1]] the page-in configuration overwrites the current configuration
   
   []
   
