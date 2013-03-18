@@ -17,8 +17,7 @@ Overview
   
 * Configuration of the Toolbar via Configuration File
 
-  The toolbar is defined inside the configuration file. That's why we must remove the default of the
-  'toolbar'-property.
+  The toolbar is defined inside the configuration file. That's why the 'toolbar'-property must be removed.
   
 +---+
   CKEditor editor = new CKEditor(request, "fieldname");
