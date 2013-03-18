@@ -6,7 +6,7 @@ Overview
 
   The examples in this section aren't completely runnable. Each of these just demonstrates an exemplary feature.
   
-* Simplest editor call
+* Simplest Editor Call
 
 +---+
   CKEditor editor = new CKEditor(request, "fieldname");
@@ -15,26 +15,26 @@ Overview
   editor.toString(); // builds the html/javascript code
 +---+
   
-* Configuration of the toolbar via configuration file
+* Configuration of the Toolbar via Configuration File
 
-  The toolbar is defined inside the configuration file. That's why we must disable the default toolbar by override it 
-  with an empty string.
+  The toolbar is defined inside the configuration file. That's why we must remove the default of the
+  'toolbar'-property.
   
 +---+
   CKEditor editor = new CKEditor(request, "fieldname");
   editor.setValue("This is some <strong>sample text</strong>.");
-  editor.setToolbarName(""); // we have to disable the default toolbar here
+  editor.removeProperty("toolbar"); // we have to disable the default toolbar here
   editor.setProperty("customConfig", "path-to-your-config.js");
   editor.toString(); // builds the html/javascript code
 +---+ 
 
-* Configuration of the toolbar via API
+* Configuration of the Toolbar via API
 
 +---+
   CKEditor editor = new CKEditor(request, "fieldname");
   editor.setValue("This is some <strong>sample text</strong>.");
-  editor.setToolbarName("myToolbar");
-  editor.setToolbarDefinition("myToolbar", 
+  editor.setProperty("toolbar", "myToolbar");
+  editor.setProperty("toolbar.myToolbar", 
       "[{ 'name': 'basics', 'items': [ 'Bold','Italic','Strike','-','About' ] }]");
   editor.toString(); // builds the html/javascript code
 +---+

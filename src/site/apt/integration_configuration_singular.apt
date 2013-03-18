@@ -1,0 +1,46 @@
+   ----------------------------
+   Singular Configuration
+   ----------------------------                                    
+      
+Singular Configuration
+
+  The CKEditor.Java backend provides 2 ways to overwrite properties used by the JavaScript frontend (the editor).
+  
+* Defining the Configuration in-page
+
+  Each property can be set by <<<#setProperty>>> of {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}},
+  which will passing-thru to the frontend. Disadvantage: These properties have to be defined in every page.
+  
+  Example:
+  
++------------------------------------------------------------------------------+
+  CKEditor editor = new CKEditor(request, "field");
+  editor.setProperty("uiColor", "#AADC6E");
++------------------------------------------------------------------------------+  
+  
+* Using a Custom Configuration File
+  
+  This should be the preferred way to set global properties and can be done by <<<#setProperty>>>, too. 
+  
+  Example:
+ 
++------------------------------------------------------------------------------+
+  CKEditor editor = new CKEditor(request, "field");
+  editor.setProperty("customConfig", "PathToYourConfig.js");
++------------------------------------------------------------------------------+
+
+* Using multiple Configuration Options
+
+  It isn't required to use only one of the configuration options described above. Just keep the
+  loading order in mind:
+  
+  [[1]] loading of the default configuration
+  
+  [[1]] if a custom configuration file is used, this file is loaded and overwrites the defaults
+  
+  [[1]] the page-in configuration overwrites the current configuration.
+  
+  []
+  
+  More details about the configuration settings can be found at {{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Setting_Configurations#Configuration_Loading_Order}Configuration Loading Order}}
+  in the official developers guide of the CKEditor.   

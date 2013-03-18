@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project xmlns="http://maven.apache.org/DECORATION/1.3.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd">
+<project xmlns="http://maven.apache.org/DECORATION/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd"
+  name="CKEditor.Java" >
 
 	<publishDate position="left" format="yyyy-MM-dd" />
 	<version position="left" />
@@ -13,8 +13,8 @@
 		</menu>
 		<menu name="Integration">
 			<item name="Overview" href="/integration_overview.html" />
-			<item name="Configuration of the backend" href="/integration_configuration_backend.html"/>
-			<item name="Configuration of the frontend" href="/integration_configuration_frontend.html"/>
+			<item name="Configuration Global" href="/integration_configuration_global.html"/>
+			<item name="Configuration Singular" href="/integration_configuration_singular.html"/>
 		</menu>
 		<menu name="Examples">
 			<item name="Overview" href="/examples_overview.html"/>

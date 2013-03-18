@@ -13,7 +13,7 @@ CKEditor.Java
   which provides this functionality: {{{http://th-schwarz.github.com/C5Connector.Java/}C5Connector.Java}}\
   It's a servlet-based backend for the {{{http://github.com/simogeo/Filemanager}filemanager of corefive}}. 
   
-* Differences related to the <<<CKEditor for Java>>>
+* Differences compared to the <<<CKEditor for Java>>>
 
   There are some mentionable differences between this library and the library which is provided by the official
   CKEditor team ({{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Java/Integration}CKEditor for Java}}):
@@ -21,15 +21,15 @@ CKEditor.Java
   * CKEditor.Java isn't focused on JSP and can be used in all servlet-based systems.\
     A tag library isn't provided yet!
   
-  * CKEditor.Java has an intelligent handling of properties: In the meaning of 'convention over configuration' 
-    there are defaults for all properties (they are optional). The CKEditor.Java provides different ways to
-    override these properties.
-    
+  * CKEditor.Java has an advanced handling of properties. It's possible to set all configuration settings
+    of the CKEditor, which should be used for the entire web application, in one properties file. This keeps the front-end 
+    code clean. 
+  
   * CKEditor.Java uses the state-of-the-art logging facade {{{http://www.slf4j.org}slf4j}}. The preferred
     logging framework can be used!
 
   
 Call to Action
 
-  Help me to improve CKEditor.Java. If you find a bug or you miss certain features, don't hesitate to file
+  Help me to improve CKEditor.Java. If you find a bug or you certain features, don't hesitate to file
   a {{{https://github.com/th-schwarz/ckeditor.java/issues}ticket}}.  

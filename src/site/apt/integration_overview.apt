@@ -7,28 +7,57 @@ Overview
   The main object of the editor is {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}}.  
   Let's have a look at a minimal code snippet to see how it works:
   
-+------------------------------------------------------------------------------+
++---+
   CKEditor editor = new CKEditor(request, "fieldName");
   editor.setValue("This is some <strong>sample text</strong>."); <!-- initial value -->
-  <!-- out.println(editor);  example for jsp -->
-+------------------------------------------------------------------------------+
+  editor.toString();
++---+
 
   That's all!
   
-  <<It's really important>> to understand that there are two kinds of configurations:
+* Configuration
+
+  It's really important to understand that the properties are divided into two parts: 
   
-  * For the backend - the configuration of the CKEditor.Java - see {{{./integration_configuration_backend.html}Configuration (backend)}}.
+  * Basic properties for CKEditor.java itself:
   
-  * For the frontend - the configuration of the editor - see {{{./integration_configuration_frontend.html}Configuration (frontend)}}. 
-  For more information on configuration settings of the editor look at the section 'Configuration' of the
-  {{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide}official developer's guide}}.
-  
+    * <<<default.encoding>>>: The general character encoding. The default is <<<UTF-8>>>. <<Should be untouched!>>
+    
+    * <<<ckeditor.basePath>>>: The directory of the editor relative to the context root. The default is <<</ckeditor>>>.
+         
+  * All available configuration properties for the CKEditor ({{{http://docs.cksource.com/ckeditor_api/symbols/CKEDITOR.config.html}see}}).
+    These properties will be passing-thru the CKEditor.\
+    This can keep your frontend-code clean!
+
   []
   
-===
+  The handling of these two types of properties is the same.
   
-  [Hint:]
-    There are several ways to call the editor with javascript. CKEditor.Java just uses\
-    <<<CKEDITOR.replace( element, [config] )>>>.\
-    That's quite enough to make one editor completely configurable. The support of multiple editor isn't implemented yet,
-    but it will be considered in future releases.
+* Types of Configuration Setting
+  
+  The handling of properties in CKEditor and CKEditor.java are based on the same principle, - 'convention over configuration'.
+  This means, all properties have defaults.
+  
+  CKEditor.Java supports two levels, where the properties can be overwritten:
+  
+  * {{{./integration_configuration_global.html}Global}}: The overwritten properties are valid for the <entire>
+    web application. All changes have an effect on all instances of the editor!
+  
+  * {{{./integration_configuration_singular.html}Singular}}: The overwritten properties have an effect on only one
+    editor instance.
+    
+  []
+    
+  It isn't required to use only one of these types of configuration. Just keep the
+  loading order in mind:
+  
+  [[1]] loading of the default properties
+  
+  [[1]] (if exists) loading of the global properties (overwrites the defaults)
+  
+  [[1]] (if exists) loading of the singular properties (overwrites the default and global properties)
+    
+  []
+  
+  Starting from here the {{{http://docs.cksource.com/CKEditor_3.x/Developers_Guide/Setting_Configurations#Configuration_Loading_Order}Configuration Loading Order}}
+  of the CKEditor is valid.   

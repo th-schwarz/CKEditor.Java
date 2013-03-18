@@ -1,0 +1,49 @@
+   ----------------------------
+   Global Configuration
+   ----------------------------                                    
+      
+Global Configuration
+
+  Apart from the setting of the two basic properties for CKEditor.Java itself (<<<default.encoding>>>, <<<default.basePath>>>),
+  it's just a wrapper for the 'customConfig'-configuration of the CKEditor. But there are two advantages:
+  
+  * Just one configuration file has to be edited.
+  
+  * The frontend-code can be kept clean, because repetitive code fragments can be moved from the frontend-code to 
+  the backend-code of the web application.
+
+  []
+  
+  There are different ways to overwrite the properties permanently, for the <entire> web application.
+  
+* Defining the Configuration by a Properties File
+
+  Create a <<<ckeditor.properties>>> file in the classpath (usually <<<WEB-INF/classes>>>):
+
++---+
+  ...
+  toolbar = Full
+  ...
++---+
+
+* Defining the Configuration by the <<<CKPropertiesLoader>>>
+
+  This object can be called:
+
++---+
+  ...
+  import de.thischwa.ckeditor.CKPropertiesLoader;
+  ...
+  CKPropertiesLoader.setProperty("toolbar", "Full");
+  ...
++---+
+
+  This procedure is the same for the basic properties of CKEditor.Java and the configuration properties of the
+  CKEditor.
+
+  [Attention:] It is essential to know how to use the <<<CKPropertiesLoader>>>.
+    Like the common properties usage, you should use it only at the start of your web application. If you don't 
+    have a kind of an 'initialization' servlet, where you could place the <<<CKPropertiesLoader>>> calls, I suggest 
+    writing your own <<<ServletContextListener>>>. Thus you guarantee, you call the <<<CKPropertiesLoader>>> 
+    <before> the <<<ConnectorServlet>>> is initialized.
+   

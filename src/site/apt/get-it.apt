@@ -1,10 +1,12 @@
    ----------------------------
    Get it
    ----------------------------
+   
+Get it
 
   There are two ways to get the CKEditor.Java:
 
-Manual build 
+* Manual build 
 
   The desired jar file can be easily build with maven2. 
   Just download the source, declare a preferred SLF4J binding in the dependencies section of your POM within 
@@ -17,10 +19,10 @@ mvn clean package
   It creates a zip file like <<<ckeditor-java-[version]-SNAPSHOT-bin.zip>>> which contains all binaries
   of the project dependencies. Simply put these files in your classpath.
 
-Using Maven2
+* Using Maven2
 
-  CKEditor.Java isn't already part of the official maven repositories. But the author provides a public repository. In order to
-  use it, you have to add the following snippets to your pom:
+  CKEditor.Java isn't already part of the official maven repositories. But the author provides a public repository. 
+  In order to use it, you have to add the following snippets to your pom:
   
 
 +------------------------------------------------------------------------------+
