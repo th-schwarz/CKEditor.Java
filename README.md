@@ -13,3 +13,6 @@ CKEditor.Java is distributed under the [GPL](http://www.gnu.org/licenses/gpl.htm
 * 0.2
   * issue #5: support creating of a div for building the editor
   * issue #6: configuration: handling of properties should support all CKEDITOR.config properties
+
+* 1.0
+  * cleaned-up code and properties
