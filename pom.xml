@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>ckeditor-java</artifactId>
 	<groupId>de.thischwa.ckeditor</groupId>
-	<version>0.3-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 	<description>The Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
 	<name>CKEditor.Java</name>
