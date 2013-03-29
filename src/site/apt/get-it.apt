@@ -16,8 +16,8 @@ Get it
 mvn clean package
 +------------------------------------------------------------------------------+
 
-  It creates a zip file like <<<ckeditor-java-[version]-SNAPSHOT-bin.zip>>> which contains all binaries
-  of the project dependencies. Simply put these files in your classpath.
+  A zip such as <<<ckeditor-java-[version]-SNAPSHOT-bin.zip>>> which contains all binaries
+  of the project dependencies is created. Simply put these files in your classpath.
 
 * Using Maven2
 

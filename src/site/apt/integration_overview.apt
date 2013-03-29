@@ -48,7 +48,7 @@ Overview
     
   []
     
-  It isn't required to use only one of these types of configuration. Just keep the
+  There is no requirement to use only these types of configuration. Just keep the
   loading order in mind:
   
   [[1]] loading of the default properties

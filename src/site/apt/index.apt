@@ -4,8 +4,8 @@
                     
 CKEditor.Java
 
-  ... the Java backend for the {{{http://ckeditor.com}CKEditor}}. It provides an object with a simple interface in order to 
-  create and configure an editor instance. This makes the deployment of the CKEditor a peace of cake.  
+  ... the Java backend for the {{{http://ckeditor.com}CKEditor}}. It provides an object with a simple interface for 
+  creating and configuring an editor instance. This makes the deployment of the CKEditor a piece of cake.  
   It is targeted to be used in servlet-based systems like JSP as well as template engines 
   like {{{http://velocity.apache.org}Velocity}} or {{{http://freemarker.org}FreeMarker}}. 
   
@@ -22,8 +22,8 @@ CKEditor.Java
     A tag library isn't provided yet!
   
   * CKEditor.Java has an advanced handling of properties. It's possible to set all configuration settings
-    of the CKEditor, which should be used for the entire web application, in one properties file. This keeps the front-end 
-    code clean. 
+    for the entire web application which should be used in the CKEditor in one properties file. 
+    This keeps the frontend code clean. 
   
   * CKEditor.Java uses the state-of-the-art logging facade {{{http://www.slf4j.org}slf4j}}. The preferred
     logging framework can be used!

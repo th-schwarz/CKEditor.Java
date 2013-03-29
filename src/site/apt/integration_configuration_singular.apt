@@ -9,7 +9,7 @@ Singular Configuration
 * Defining the Configuration in-page
 
   Each property can be set by <<<#setProperty>>> of {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}},
-  which will passing-thru to the frontend. Disadvantage: These properties have to be defined in every page.
+  which will pass-thru to the frontend. Disadvantage: These properties have to be defined in every page.
   
   Example:
   
@@ -20,7 +20,7 @@ Singular Configuration
   
 * Using a Custom Configuration File
   
-  This should be the preferred way to set global properties and can be done by <<<#setProperty>>>, too. 
+  This should be the preferred way to set global properties and can be done by <<<#setProperty>>>, as well. 
   
   Example:
  

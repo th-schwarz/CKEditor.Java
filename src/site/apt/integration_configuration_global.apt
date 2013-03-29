@@ -14,7 +14,7 @@ Global Configuration
 
   []
   
-  There are different ways to overwrite the properties permanently, for the <entire> web application.
+  There are different ways to overwrite the properties for the <entire> web application permanently.
   
 * Defining the Configuration by a Properties File
 
@@ -44,6 +44,6 @@ Global Configuration
   [Attention:] It is essential to know how to use the <<<CKPropertiesLoader>>>.
     Like the common properties usage, you should use it only at the start of your web application. If you don't 
     have a kind of an 'initialization' servlet, where you could place the <<<CKPropertiesLoader>>> calls, I suggest 
-    writing your own <<<ServletContextListener>>>. Thus you guarantee, you call the <<<CKPropertiesLoader>>> 
+    writing your own <<<ServletContextListener>>>. Thus you guarantees that you call the <<<CKPropertiesLoader>>> 
     <before> the <<<ConnectorServlet>>> is initialized.
    
