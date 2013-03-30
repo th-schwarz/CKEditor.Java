@@ -1,0 +1,48 @@
+   ----------------------------
+   Velocity/Freemaker
+   ----------------------------
+
+Velocity/Freemaker
+
+  The template engines {{{http://velocity.apache.org}Velocity}} and {{{http://freemarker.org}Freemaker}} are 
+  quite similar and serves similar needs. That's why they are discussed together in this section.
+  
+  [Hint:]  
+    This part of the documentation is just for those who are familiar with Velocity or Freemaker.
+    It's just an hint for an approach on how to use CKEditor.Java with these template engines!
+  
+  []
+  
+  The required jars are <velocity-1.x.x.jar> or <freemarker-2.x.jar> in order to work with Velocity or 
+  FreeMarker respectively and <commons-collections.jar> also has to be available for Velocity. Drop the required 
+  jar files in your classpath (usually <<<WEB-INF/lib>>>).
+
+  The main class that builds the HTML for the editor is {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}}. 
+  We propose to write a wrapper object to initialize the CKeditor object.\
+  Take a look at this simple example:
+  
++---+
+  public class CKEditorWrapper {
+    private HttpServletRequest request;
+
+    public CKEditorWrapper(final HttpServletRequest request) {
+      this.request = request;
+    }
+
+    public String get(final String instanceName, final String value) {
+      CKEditor editor = new CKEditor(request, instanceName);
+      editor.setValue(value);
+      return editor.toString();
+    }
+  }  
++---+
+
+  Let's assume you add a <CKEditorWrapper> instance called <<<editor>>> to your context objects. Then you 
+  just need the following minimal template example (Velocity):
+  
++---+
+  <form method="post" action="[servlet path]">
+    $editor.get("DefaultEditor", "Some text");
+    <input type="submit" value="OK" />
+  </form>
++---+

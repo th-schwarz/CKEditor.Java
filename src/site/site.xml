@@ -18,6 +18,7 @@
 			<item name="Overview" href="/integration_overview.html" />
 			<item name="Configuration Global" href="/integration_configuration_global.html"/>
 			<item name="Configuration Singular" href="/integration_configuration_singular.html"/>
+			<item name="Velocity/Freemaker" href="/integration_velocity-freemaker.html"/>
 		</menu>
 		<menu name="Examples">
 			<item name="Overview" href="/examples_overview.html"/>
