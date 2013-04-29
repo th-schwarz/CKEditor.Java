@@ -6,11 +6,16 @@
 	<packaging>jar</packaging>
 	<description>The Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
 	<name>CKEditor.Java</name>
-	<url>https://github.com/th-schwarz/CKEditor.Java</url>
+	<url>http://th-schwarz.github.io/CKEditor.Java</url>
 	<licenses>
 		<license>
-			<name>GPL, MIT</name>
-			<url>LICENSE.txt</url>
+			<name>LGPL</name>
+			<url>LICENSE_LGPL.txt</url>
+		</license>
+		<license>
+			<name>MPL</name>
+			<comments>A business-friendly OSS license</comments>
+			<url>LICENSE_MPL.txt</url>
 		</license>
 	</licenses>
 
@@ -164,7 +169,7 @@
 				<!-- use mvn site:site for site upload -->
 				<groupId>com.github.github</groupId>
 				<artifactId>site-maven-plugin</artifactId>
-				<version>0.6</version>
+				<version>0.7</version>
 				<configuration>
 					<message>Creating site for ${project.version}</message>
 				</configuration>
@@ -176,6 +181,13 @@
 						<phase>site</phase>
 					</execution>
 				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.mylyn.github</groupId>
+						<artifactId>org.eclipse.egit.github.core</artifactId>
+						<version>2.0.3</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<!-- builds the distribution zip / it's bind to the package phase -->
