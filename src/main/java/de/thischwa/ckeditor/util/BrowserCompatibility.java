@@ -32,7 +32,7 @@ public class BrowserCompatibility {
 	private static Map<String, String> compatibleBrowsers;
 
 	static {
-		SortedMap<String, String> browsers = new TreeMap<String, String>();
+		SortedMap<String, String> browsers = new TreeMap<>();
 		browsers.put("gecko", "Firefox 2.0");
 		browsers.put("ie", "Internet Explorer 6.0");
 		browsers.put("opera", "Opera 9.5");

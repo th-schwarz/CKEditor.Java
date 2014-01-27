@@ -86,7 +86,7 @@ public class CKPropertiesLoader {
 	}
 	
 	static Map<String, String> getAllEditorProperties() {
-		Map<String, String> props = new HashMap<String, String>();
+		Map<String, String> props = new HashMap<>();
 		for(Object keyObj : properties.keySet()) {
 			String key = keyObj.toString();
 			if(key.startsWith("default.") || key.startsWith("ckeditor."))

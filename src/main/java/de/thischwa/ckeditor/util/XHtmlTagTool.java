@@ -26,9 +26,9 @@ import java.util.Map;
  * <p>
  * Usage:
  * <pre>
- * XHtmlTagTool tag = new XHtmlTagTool(&quot;a&quot;, &quot;link&quot;);
- * tag.addAttribute(&quot;href&quot;, &quot;http://google.com&quot;);
- * tag.toString(); // builds: &lt;a href=&quot;http://google.com&quot;&gt;link&lt;/a&gt;
+ * XHtmlTagTool tag = new XHtmlTagTool("a", "link to google");
+ * tag.addAttribute("href", "http://google.com");
+ * tag.toString(); // builds: &lt;a href="http://google.com"&gt;link to google&lt;/a&gt;
  * </pre>
  * </p>
  * 
@@ -64,7 +64,7 @@ public class XHtmlTagTool {
 		if (StringUtils.isNullOrEmptyOrBlank(name))
 			throw new IllegalArgumentException("Parameter 'name' shouldn't be empty!");
 		this.name = name;
-		this.attributes = new HashMap<String, String>();
+		this.attributes = new HashMap<>();
 	}
 
 	/**

@@ -33,7 +33,7 @@ class CKEditorConfig {
 	private Map<String, Object> configEntries;
 	
 	CKEditorConfig() {
-		configEntries = new LinkedHashMap<String, Object>();
+		configEntries = new LinkedHashMap<>();
 	}
 	
 	void put(final String key, final String value) {
