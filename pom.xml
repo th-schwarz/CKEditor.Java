@@ -2,16 +2,12 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>ckeditor-java</artifactId>
 	<groupId>de.thischwa.ckeditor</groupId>
-	<version>1.1-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description>The Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
 	<name>CKEditor.Java</name>
 	<url>http://th-schwarz.github.io/CKEditor.Java</url>
 	<licenses>
-		<license>
-			<name>LGPL</name>
-			<url>LICENSE_LGPL.txt</url>
-		</license>
 		<license>
 			<name>MPL</name>
 			<comments>A business-friendly OSS license</comments>
@@ -38,7 +34,7 @@
 	</distributionManagement>
 
 	<properties>
-		<project.jdk.version>1.6</project.jdk.version>
+		<jse.version>1.7</jse.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.reporting.inputEncoding>UTF-8</project.reporting.inputEncoding>
@@ -87,8 +83,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
 				<configuration>
-					<source>${project.jdk.version}</source>
-					<target>${project.jdk.version}</target>
+					<source>${jse.version}</source>
+					<target>${jse.version}</target>
 				</configuration>
 			</plugin>
 
@@ -99,7 +95,7 @@
 				<version>2.9</version>
 				<configuration>
 					<links>
-						<link>http://docs.oracle.com/javase/6/docs/api/</link>
+						<link>http://docs.oracle.com/javase/7/docs/api/</link>
 					</links>
 				</configuration>
 				<executions>
