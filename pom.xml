@@ -25,14 +25,7 @@
 		<connection>scm:git:git://github.com/th-schwarz/CKEditor.Java.git</connection>
 		<developerConnection>scm:git:git@github.com:th-schwarz/CKEditor.Java.git</developerConnection>
 	</scm>
-
-	<distributionManagement>
-		<repository>
-			<id>thischwa.repo</id>
-			<url>ftp://ftp.strato.com/</url>
-		</repository>
-	</distributionManagement>
-
+	
 	<properties>
 		<jse.version>1.7</jse.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -48,6 +41,17 @@
 		</repository>
 	</repositories>
 
+	<distributionManagement>
+		<repository>
+			<id>thischwa.repo</id>
+			<url>ftp://ftp.strato.com/</url>
+		</repository>
+		<site>
+			<id>ckeditor.site</id>
+			<url>${ckeditor-site-url}</url>
+		</site>
+	</distributionManagement>
+	
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -163,30 +167,6 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<!-- use mvn site:site for site upload -->
-				<groupId>com.github.github</groupId>
-				<artifactId>site-maven-plugin</artifactId>
-				<version>0.7</version>
-				<configuration>
-					<message>Creating site for ${project.version}</message>
-				</configuration>
-				<executions>
-					<execution>
-						<goals>
-							<goal>site</goal>
-						</goals>
-						<phase>site</phase>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>org.eclipse.mylyn.github</groupId>
-						<artifactId>org.eclipse.egit.github.core</artifactId>
-						<version>2.0.3</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-			<plugin>
 				<!-- builds the distribution zip / it's bind to the package phase -->
 				<artifactId>maven-assembly-plugin</artifactId>
 				<version>2.4</version>
@@ -207,11 +187,11 @@
 			</plugin>
 		</plugins>
 		<extensions>
-			<!-- Enabling the use of FTP -->
+			<!-- Enabling the use of ssh/scp -->
 			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-ftp</artifactId>
-				<version>1.0-beta-6</version>
+			    <groupId>org.apache.maven.wagon</groupId>
+			    <artifactId>wagon-ssh</artifactId>
+			    <version>2.7</version>
 			</extension>
 		</extensions>
 	</build>
