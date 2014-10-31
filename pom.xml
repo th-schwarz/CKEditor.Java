@@ -37,7 +37,7 @@
 	<repositories>
 		<repository>
 			<id>thischwa-repro</id>
-			<url>http://maven-repo.thischwa.de/</url>
+			<url>http://maven-repo.thischwa.codes/</url>
 		</repository>
 	</repositories>
 
@@ -126,7 +126,7 @@
 				<!-- build the site -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.2</version>
+				<version>3.3</version>
 				<configuration>
 					<inputEncoding>${project.reporting.inputEncoding}</inputEncoding>
 					<outputEncoding>${project.reporting.outputEncoding}</outputEncoding>

@@ -10,7 +10,7 @@ CKEditor.Java
   like {{{http://velocity.apache.org}Velocity}} or {{{http://freemarker.org}FreeMarker}}. 
   
   It doesn't contain a connector backend for browsing and uploading files!!! But there is another project of mine
-  which provides this functionality: {{{http://th-schwarz.github.io/C5Connector.Java/}C5Connector.Java}}\
+  which provides this functionality: {{{https://github.com/th-schwarz/C5Connector.Java}C5Connector.Java}}\
   It's a servlet-based backend for the {{{http://github.com/simogeo/Filemanager}filemanager of corefive}}. 
   
 * Differences compared to the <<<CKEditor for Java>>>
