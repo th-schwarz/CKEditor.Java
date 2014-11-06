@@ -29,7 +29,7 @@ mvn clean package
 	<repositories>
 		<repository>
 			<id>thischwa-repro</id>
-			<url>http://maven-repo.thischwa.de/</url>
+			<url>http://maven-repo.thischwa.codes/</url>
 		</repository>
 	</repositories>
 +------------------------------------------------------------------------------+
