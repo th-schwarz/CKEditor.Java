@@ -17,7 +17,7 @@ Velocity/Freemaker
   FreeMarker respectively and <commons-collections.jar> also has to be available for Velocity. Drop the required 
   jar files in your classpath (usually <<<WEB-INF/lib>>>).
 
-  The main class that builds the HTML for the editor is {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}}. 
+  The main class that builds the HTML for the editor is {{{./apidocs/codes/thischwa/ckeditor/CKEditor.html}<<<codes.thischwa.ckeditor.CKEditor>>>}}. 
   We propose to write a wrapper object to initialize the CKeditor object.\
   Take a look at this simple example:
   

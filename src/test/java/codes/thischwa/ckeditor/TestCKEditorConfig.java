@@ -1,8 +1,10 @@
-package de.thischwa.ckeditor;
+package codes.thischwa.ckeditor;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import codes.thischwa.ckeditor.CKEditorConfig;
 
 public class TestCKEditorConfig {
 

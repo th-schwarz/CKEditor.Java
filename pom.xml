@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>ckeditor-java</artifactId>
-	<groupId>de.thischwa.ckeditor</groupId>
+	<groupId>codes.thischwa.ckeditor</groupId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<description>The Java backend of CKEditor. It provides a simple object for creating an editor instance. </description>
 	<name>CKEditor.Java</name>
-	<url>http://th-schwarz.github.io/CKEditor.Java</url>
+	<url>https://github.com/th-schwarz/CKEditor.Java</url>
 	<licenses>
 		<license>
 			<name>MPL</name>
@@ -24,7 +24,8 @@
 		<url>https://github.com/th-schwarz/CKEditor.Java</url>
 		<connection>scm:git:git://github.com/th-schwarz/CKEditor.Java.git</connection>
 		<developerConnection>scm:git:git@github.com:th-schwarz/CKEditor.Java.git</developerConnection>
-	</scm>
+	  <tag>HEAD</tag>
+  </scm>
 	
 	<properties>
 		<jse.version>1.7</jse.version>
@@ -34,17 +35,10 @@
 		<github.global.server>github</github.global.server>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>thischwa-repro</id>
-			<url>http://maven-repo.thischwa.codes/</url>
-		</repository>
-	</repositories>
-
 	<distributionManagement>
 		<repository>
 			<id>thischwa.repo</id>
-			<url>ftp://ftp.strato.com/</url>
+			<url>${repo-url}</url>
 		</repository>
 		<site>
 			<id>ckeditor.site</id>
@@ -126,7 +120,7 @@
 				<!-- build the site -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.3</version>
+				<version>3.4</version>
 				<configuration>
 					<inputEncoding>${project.reporting.inputEncoding}</inputEncoding>
 					<outputEncoding>${project.reporting.outputEncoding}</outputEncoding>

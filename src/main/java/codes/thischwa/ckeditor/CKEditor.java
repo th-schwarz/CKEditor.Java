@@ -7,15 +7,15 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
-package de.thischwa.ckeditor;
+package codes.thischwa.ckeditor;
 
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import de.thischwa.ckeditor.util.BrowserCompatibility;
-import de.thischwa.ckeditor.util.StringUtils;
-import de.thischwa.ckeditor.util.XHtmlTagTool;
+import codes.thischwa.ckeditor.util.BrowserCompatibility;
+import codes.thischwa.ckeditor.util.StringUtils;
+import codes.thischwa.ckeditor.util.XHtmlTagTool;
 
 /**
  * The object-oriented representation of the <a href="http://ckeditor.com">CKEditor</a>. 

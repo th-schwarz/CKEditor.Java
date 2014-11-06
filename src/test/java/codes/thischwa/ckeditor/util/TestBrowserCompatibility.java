@@ -19,11 +19,13 @@
  * 
  * == END LICENSE ==
  */
-package de.thischwa.ckeditor.util;
+package codes.thischwa.ckeditor.util;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import codes.thischwa.ckeditor.util.BrowserCompatibility;
 
 /**
  * Tests for {@link BrowserCompatibility}.<br />

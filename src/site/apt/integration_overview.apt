@@ -4,7 +4,7 @@
 
 Overview
 
-  The main object of the editor is {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}}.  
+  The main object of the editor is {{{./apidocs/codes/thischwa/ckeditor/CKEditor.html}<<<codes.thischwa.ckeditor.CKEditor>>>}}.  
   Let's have a look at a minimal code snippet to see how it works:
   
 +---+

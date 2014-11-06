@@ -38,7 +38,7 @@ mvn clean package
 
 +------------------------------------------------------------------------------+
 	<dependency>
-		<groupId>de.thischwa.ckeditor</groupId>
+		<groupId>codes.thischwa.ckeditor</groupId>
 		<artifactId>ckeditor-java</artifactId>
 		<version>${ckeditor-java.version}</version>
 	</dependency>

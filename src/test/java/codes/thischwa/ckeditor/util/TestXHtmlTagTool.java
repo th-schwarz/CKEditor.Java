@@ -19,13 +19,13 @@
  * 
  * == END LICENSE ==
  */
-package de.thischwa.ckeditor.util;
+package codes.thischwa.ckeditor.util;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import de.thischwa.ckeditor.util.XHtmlTagTool;
+import codes.thischwa.ckeditor.util.XHtmlTagTool;
 
 /**
  * Tests for {@link XHtmlTagTool}.

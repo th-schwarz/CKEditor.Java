@@ -8,7 +8,7 @@ Singular Configuration
   
 * Defining the Configuration in-page
 
-  Each property can be set by <<<#setProperty>>> of {{{./apidocs/de/thischwa/ckeditor/CKEditor.html}<<<de.thischwa.ckeditor.CKEditor>>>}},
+  Each property can be set by <<<#setProperty>>> of {{{./apidocs/codes/thischwa/ckeditor/CKEditor.html}<<<codes.thischwa.ckeditor.CKEditor>>>}},
   which will pass-thru to the frontend. Disadvantage: These properties have to be defined in every page.
   
   Example:
