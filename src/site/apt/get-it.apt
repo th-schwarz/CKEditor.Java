@@ -28,7 +28,7 @@ mvn clean package
 +------------------------------------------------------------------------------+
 	<repositories>
 		<repository>
-			<id>thischwa-repro</id>
+			<id>thischwa-repo</id>
 			<url>http://maven-repo.thischwa.codes/</url>
 		</repository>
 	</repositories>
