@@ -149,7 +149,7 @@ public class CKEditor {
 	}
 	
 	/**
-	 * Calling this method ensures a 'div' is building instead of a 'textarea'. <br/>
+	 * Calling this method ensures a 'div' is building instead of a 'textarea'. <p>
 	 * Just a wrapper for {@link #useDiv(boolean)}.
 	 */
 	public void useDiv() {

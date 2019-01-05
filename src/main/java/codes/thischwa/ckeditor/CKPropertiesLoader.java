@@ -19,13 +19,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Static object for managing the properties files. <br/>
+ * Static object for managing the properties files. <p>
  * The files are loaded in the following order:
  * <ol>
  * <li>The default properties.</li>
  * <li>The user-defined properties <code>ckeditor.properties</code> if present.</li>
  * </ol> 
- * Please note: The user-defined properties <em>override</em> the default one.<br/> 
+ * Please note: The user-defined properties <em>override</em> the default one.<p> 
  * Moreover, you can set properties programmatically too ({@link #setProperty(String, String)}) 
  * but make sure to override them <em>before</em> the first call of any property.
  */
