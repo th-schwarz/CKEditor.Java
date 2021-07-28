@@ -1,4 +1,4 @@
-# CKEditor.Java
+# CKEditor.Java (deprecated)
 
 Java backend of the [CKEditor](http://ckeditor.com). It provides a simple object for creating an editor instance.
 
